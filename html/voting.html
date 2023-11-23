@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voting</title>
+  </head>
+  <body>
+    <h1>Voter Registration</h1>
+    <form>
+      <label for="first_name">First Name: </label>
+      <input
+        type="text"
+        id="first_name"
+        placeholder="ex. Achumalate"
+        value="Ladis"
+      />
+      <br />
+      <label for="last_name">Last Name: </label>
+      <input
+        type="text"
+        id="last_name"
+        placeholder="ex. Genggeng"
+        value="Washerum"
+      />
+      <br />
+      <label for="password">Password: </label>
+      <input
+        type="password"
+        id="password"
+        placeholder="at least 6 characters"
+      />
+      <br />
+      <label for="confirm_password">Confirm Password: </label>
+      <input
+        type="password"
+        id="confirm_password"
+        placeholder="re-enter password"
+      />
+      <br />
+      <label for="email_address">Email address: </label>
+      <input
+        type="email"
+        placeholder="ex. jdelacruz@gmail.com"
+        id="email_address"
+      />
+      <br />
+      <label for="birthdate">Birthdate: </label>
+      <input type="date" id="birthdate" />
+      <br />
+      <label for="civil_status">Civil Status:</label>
+      <select name="civil_status" id="civil_status" required>
+        <option disabled selected>Select one...</option>
+        <option disabled>----------------</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="separated">Separated</option>
+        <option value="windowed">Windowed</option>
+        <option value="other">Other</option>
+      </select>
+      <br />
+      <label for="number_children">Number of children: </label>
+      <input
+        type="number"
+        id="number_children"
+        placeholder="ex. 2"
+        value="0"
+        min="0"
+      />
+      <br />
+      <label for="excitement">How excited are you to vote: </label>
+      <input type="range" id="excitement" />
+      <br />
+      <label for="pic_voter_id"> Upload picture of voter ID: </label>
+      <input type="file" id="pic_voter_id" />
+      <br />
+      <label for="driver_license">Driver's License:</label>
+      <input
+        type="text"
+        id="driver_license"
+        placeholder="ex. E12-00-000000"
+        minlenght="13"
+        maxlength="13"
+        disabled
+      />
+      <br />
+      <label for="feedback">
+        Provide feedback on the registration process: </label></br>
+        <textarea placeholder="Enter 3-5 sentences" rows="5" cols="40"></textarea><br/>
+      <input type="submit" value="Submit Registration Form" />
+    </form>
+    <h1>Your Ballot</h1>
+    <form>
+      <h2>President</h2>
+      <label for="president1">
+        <input
+          type="radio"
+          name="president"
+          value="lelouch_britannia"
+          id="president1"
+        />Lelouch Vi Britannia</label
+      >
+      <br />
+      <label for="president2">
+        <input
+          type="radio"
+          name="president"
+          value="eren_jaeger"
+          id="president2"
+          checked
+        />Eren Jaeger</label
+      >
+      <br />
+      <label for="president3">
+        <input
+          type="radio"
+          name="president"
+          value="matt_monroe"
+          id="president3"
+        />Matt Monroe</label
+      >
+      <br />
+      <h2>Vice President</h2>
+      <label for="vice1"
+        ><input
+          type="radio"
+          name="vice_president"
+          value="suzaku_kururugi"
+          id="vice1"
+        />Suzaku Kururugi</label
+      >
+      <br />
+      <label for="vice2">
+        <input
+          type="radio"
+          name="vice_president"
+          value="king_cole"
+          id="vice2"
+        />King Cole</label
+      >
+      <h2>Senator</h2>
+      <input
+        type="checkbox"
+        name="senator1"
+        id="senator1"
+        value="jill_valentine"
+      />
+      <label for="senator1">Jill Valentine</label><br />
+      <input type="checkbox" name="senator2" id="senator2" value="baki_hanma" />
+      <label for="senator2">Baki Hamna</label><br />
+      <input
+        type="checkbox"
+        name="senator3"
+        id="senator3"
+        value="tifa_lochart"
+      />
+      <label for="senator3">Tifa Lockhart</label>
+      <br/>
+      <input type="submit" value="Submit Ballot" />
+    </form>
+  </body>
+</html>

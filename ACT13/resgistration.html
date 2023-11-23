@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISCP Employee Registration Form</title>
+  </head>
+  <body>
+    <h1>ISCP Employee Registration Form</h1>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/en/c/c9/Seal_of_the_International_State_College_of_the_Philippines.png"
+    />
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/aCUhfPAyDHY?si=dfLlEL0hBggUBsDL"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+    <form>
+      <h2>Basic Information</h2>
+      <label for="first_name">First Name: </label>
+      <input
+        type="text"
+        id="first_name"
+        placeholder="ex. Ladis"
+      />
+      <br />
+      <label for="last_name">Last Name: </label>
+      <input
+        type="text"
+        id="last_name"
+        placeholder="ex. Washerum"
+      />
+      <br />
+      <label for="birthplace">Place of Birth: </label>
+      <input
+        type="text"
+        id="birthplace"
+        placeholder="ex. Planet Mars, Etivac"
+      />
+      <br />
+      <label for="birthdate">Birthdate: </label>
+      <input type="date" id="birthdate" />
+      <br />
+      <label for="civil_status">Civil Status: </label>
+      <select name="civil_status" id="civil_status">
+        <option disabled selected>Select one...</option>
+        <option disabled>----------------</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="separated">Separated</option>
+        <option value="windowed">Windowed</option>
+        <option value="other">Other</option>
+      </select>
+      <br />
+      Gender: 
+      <label for="male"></label>
+      <input type="radio" id="male" name="gender" checked> Male
+      <label for="female"></label>
+      <input type="radio" id="female" name="gender"> Female
+      <label for="other"></label>
+      <input type="radio" id="other" name="gender"> Other
+      <br />
+      <label for="mother_name">Mother's maiden name: </label>
+      <input type="text" id="mother_name" placeholder="ex. Max Imumcapacity" />
+      <br />
+      <label for="father_name">Father's name: </label>
+      <input type="text" id="father_name" placeholder="ex. Aladeen Washerum" />
+      <br />
+      <h2>Contact Information:</h2>
+      <label for="email_add">Email address: </label>
+      <input
+        type="email"
+        id="email_add"
+        placeholder="dictatorship@wadiya.com"
+      />
+      <br />
+      <label for="mobile_number">Contact number (mobile): </label>
+      <input
+        type="text"
+        maxlength="11"
+        minlength="11"
+        placeholder="ex. 09123456789"
+      />
+      <br />
+      <label for="tele_number">Contact number (telephone): </label>
+      <input
+        type="text"
+        maxlength="10"
+        minlength="10"
+        placeholder="ex. 0464023024"
+      />
+      <h2>Address</h2>
+      <label for="street_number">Street Number: </label>
+      <input type="text" id="street_number" placeholder="143"/>
+      <labek for="street_name">Street Name: </labek>
+      <input type="text" id="street_name" placeholder="Utoy Street"/><br />
+      <label for="brgy">Barangay: </label>
+      <select name="brgy" id="brgy">
+        <option disabled selected>Select one...</option>
+        <option disabled>----------------</option>
+        <option value="halukay-ube">Halukay-Ube</option>
+        <option value="ocho-otso">Ocho-Otso</option>
+      </select>
+      <label for="city-town">City/Town: </label>
+      <select name="city-town" id="city-town">
+        <option disabled selected>Select one...</option>
+        <option disabled>----------------</option>
+        <option value="biringan">Biringan City</option>
+        <option value="mars">Planet Mars</option>
+        <option value="moon">Moon</option>
+      </select>
+      <label for="province">Province: </label>
+      <select id="province" name="province">
+        <option disabled selected>Select one...</option>
+        <option disabled>----------------</option>
+        <option value="solar_system">Solar System</option>
+        <option value="andromeda_system">Andromeda System</option>
+        <option value="etivac">Etivac</option>
+      </select>
+      <br />
+      <label for="full_address">Full address: </label><br />
+      <textarea
+        name="full_address"
+        id="full_address"
+        rows="5"
+        cols="40"
+        placeholder="ex. 143 Utoy Street Brgy. Halukay-Ube, Biringan City, Etivac"
+      ></textarea>
+      <h2>Government Information</h2>
+      <label for="sss_id">SSS ID: </label>
+      <input
+        type="text"
+        id="sss_id"
+        placeholder="ex. 04-0911123-0"
+        minlength="12"
+        maxlength="12"
+      >
+      </input>
+      <br>
+      <label for="pag-ibig_id">Pag-Ibig ID: </label>
+      <input
+        type="text"
+        id="pag-ibig_id"
+        placeholder="ex. 1234-1234-1234"
+        minlength="14"
+        maxlength="14"
+      >
+      </input>
+      <br>
+      <label for="philhealth_id">PhilHealth ID: </label>
+      <input
+        type="text"
+        id="philhealth_id"
+        placeholder="ex. 5678-5678-5678"
+        minlength="14"
+        maxlength="14"
+      >
+      </input>
+      <br />
+      <label for="id_pic">Upload 2x2 Picture: </label>
+      <input type="file" id="id_pic" />
+      <br />
+      <label for="gov_id"> Upload picture of government ID: </label>
+      <input type="file" id="gov_id" />
+      <h2>Account Information</h2>
+      <label for="username">Username: </label>
+      <input type="text" id="username" placeholder="admiral6eneral"/>
+      <br />
+      <label for="password">Password: </label>
+      <input
+        type="password"
+        id="password"
+        placeholder="at least 8 characters"
+        minlength="8"
+      /> 
+      <br />
+      <label for="confirm_password">Confirm Password: </label>
+      <input
+        type="password"
+        id="confirm_password"
+        minlength="8"
+        placeholder="re-enter password">
+      <br />
+      <label for="prof_pic">Upload profile image: </label>
+      <input type="file" id="prof_pic" />
+      <br />
+      <h2>Have you experienced any of the following in the last 30 days?</h2>
+      <input
+      type="checkbox"
+      name="symptom1"
+      id="symptom1"
+      value="counghing"
+    />
+    <label for="symptom1">Coughing</label><br />
+    <input
+      type="checkbox"
+      name="symptom2"
+      id="symptom2"
+      value="fever"
+    />
+    <label for="symptom2">Fever</label><br /><input
+    type="checkbox"
+    name="symptom3"
+    id="symptom3"
+    value="headache"
+    />
+    <label for="symptom3">Headache</label><br />
+    <input
+      type="checkbox"
+      name="symptom4"
+      id="symptom4"
+      value="common_cold"
+    />
+    <label for="symptom4">Common Cold</label><br />
+    <input
+      type="checkbox"
+      name="symptom5"
+      id="symptom5"
+      value="body_ache"
+    />
+    <label for="symptom5">Body Ache</label><br />
+    <input
+      type="checkbox"
+      name="symptom6"
+      id="symptom6"
+      value="sore_throat"
+    />
+    <label for="symptom6">Sore Throat</label><br />
+    <input
+      type="checkbox"
+      name="symptom7"
+      id="symptom7"
+      value="tiredness"
+    />
+    <label for="symptom7">Tiredness</label><br />
+    <input
+      type="checkbox"
+      name="symptom8"
+      id="symptom8"
+      value="smell_loss"
+    />
+    <label for="symptom8">Loss of Smell</label><br />
+    <h2>Give a short description about yourself.</h2>
+    <textarea cols="40" rows="4" placeholder="ex. Most handsome man in the multiverse."></textarea><br/>
+    <input type="submit" value="Submit">
+    </form>
+
+    <footer>
+        <p>All rights reserved @ ZZZarkaztik</p>
+    </footer>
+  </body>
+</html>

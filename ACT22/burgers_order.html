@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Bear Burgers - Order</title>
+    <style>
+      #table-header {
+        background-color: rgb(255, 200, 99);
+      }
+      .choices {
+        background-color: rgb(255, 229, 182);
+      }
+      #taxes {
+        background-color: rgb(250, 238, 216);
+      }
+      #form-container {
+        background-color: rgb(0,0,0);
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="display-1">Order Here!</h1>
+      <div class="row">
+        <div class="col-lg-8">
+          <table class="table text-center">
+            <thead>
+              <tr id="table-header">
+                <th>Icons</th>
+                <th>Item Names</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tr class="choices">
+              <th colspan="3">Meals</th>
+            </tr>
+            <tr class="table-success">
+              <td>
+                <img
+                  src="img/italiano-burger.jpeg"
+                  class="object-fit-cover"
+                  alt="burger"
+                  width="50px"
+                  height="50px"
+                />
+              </td>
+              <td>Italiano Burger</td>
+              <td>₱55.00</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="img/Italiano-fried-Chicken.jpg"
+                  class="object-fit-cover"
+                  alt="chicken"
+                  width="50px"
+                  height="50px"
+                />
+              </td>
+              <td>Italiano Fried Chicken</td>
+              <td>₱55.00</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="img/Italiano-Spaghetti.jpg"
+                  class="object-fit-cover"
+                  alt="spag"
+                  width="50px"
+                  height="50px"
+                />
+              </td>
+              <td>Italiano Spaghetti</td>
+              <td>₱55.00</td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="img/italiano-pizza.jpg"
+                  class="object-fit-cover"
+                  alt="pizza"
+                  width="50px"
+                  height="50px"
+                />
+              </td>
+              <td>Italiano Pizza</td>
+              <td>₱155.00</td>
+            </tr>
+            <tr class="choices">
+              <th colspan="3">Drinks</th>
+            </tr>
+            <tr>
+              <td colspan="2">Coke</td>
+              <td>₱20.00</td>
+            </tr>
+            <tr>
+              <td colspan="2">Sprite</td>
+              <td>₱20.00</td>
+            </tr>
+            <tr>
+              <td colspan="2">Sarsi</td>
+              <td>₱20.00</td>
+            </tr>
+            <tr>
+              <td colspan="2" rowspan="2" id="taxes">
+                All items are subject to tax. No refunds. All items are not
+                transferrable.
+              </td>
+              <td>Extra Rice - ₱20.00</td>
+            </tr>
+            <tr>
+              <td>Condiments - ₱20.00</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-4">
+          <img src="img/fork-spag.png" height="600px" alt="fork-spag"/>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid my-5" id="form-container">
+        <div class="container m-5">
+            <h1 class="display-1 text-light">Tell Us What You Think?</h1>
+            <div class="row text-light">
+                <div class="col-6">
+                <img src="img/buger-stack.webp" alt="burger-stack">
+                </div>
+                <div class="col-6">
+                    <form>
+                        <div class="form-floating my-3" height="50px">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="name"
+                              placeholder="Name"
+                            />
+                            <label for="name" class="text-secondary">Name</label>
+                          </div>
+                          <div class="row">
+                            <label>What did we do well?</label>
+                            <div class="form-check">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="a1"
+                              /><label class="form-check-label" for="a4"
+                                >The service</label
+                              >
+                            </div>
+                            <div class="form-check">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="a2"
+                              /><label class="form-check-label" for="a5">The food</label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="a3"
+                              /><label class="form-check-label" for="a6"
+                                >The atmosphere</label
+                              >
+                            </div>
+                            <div class="row">
+                                <label for="q3">How would you rate the food?</label>
+                                <div class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input"
+                                    value="a4"
+                                    id="a4"
+                                    name="q3"
+                                  /><label class="form-check-label" for="a4">⭐️</label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input"
+                                    value="a5"
+                                    id="a5"
+                                    name="q3"
+                                  /><label class="form-check-label" for="a5">⭐️ ⭐️</label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input"
+                                    value="a6"
+                                    id="a6"
+                                    name="q3"
+                                  /><label class="form-check-label" for="a6">⭐️ ⭐️ ⭐️</label>
+                                </div>
+                                <div class="form-check">
+                                    <input
+                                      type="radio"
+                                      class="form-check-input"
+                                      value="a7"
+                                      id="a7"
+                                      name="q3"
+                                    /><label class="form-check-label" for="a7">⭐️ ⭐️ ⭐️ ⭐️</label>
+                                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
