@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Chat Box Modal</title>
+    <style>
+      /* Customize the chat modal appearance */
+      .chat-modal {
+        max-width: 400px;
+      }
+
+      .chat-modal .modal-dialog {
+        margin-top: 10vh;
+      }
+
+      .chat-modal .modal-content {
+        border-radius: 0;
+        border: none;
+      }
+
+      .chat-modal .modal-body {
+        max-height: 300px;
+        overflow-y: auto;
+        padding: 15px;
+      }
+
+      .message {
+        margin-bottom: 15px;
+      }
+
+      /* Style the input area */
+      .input-group {
+        margin-top: 15px;
+      }
+
+      /* Style the send button */
+      .btn-send {
+        border-radius: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#chatModal"
+    >
+      Open Chat
+    </button>
+
+    <!-- Chat Modal -->
+    <div
+      class="modal fade chat-modal"
+      id="chatModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="chatModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="chatModalLabel">Chat Box</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!-- Modal Body (Chat Messages) -->
+          <div class="modal-body">
+            <div class="message">User: Hello!</div>
+            <div class="message">Bot: Hi there!</div>
+            <!-- Add more messages as needed -->
+          </div>
+
+          <!-- Modal Footer (Input Area) -->
+          <div class="modal-footer">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Type your message..."
+              />
+              <div class="input-group-append">
+                <button class="btn btn-primary btn-send" type="button">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
