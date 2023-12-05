@@ -27,11 +27,12 @@ function runActivity() {
     if (choice_name == 0) {
       break;
     }
+
     for (let i = 0; i < fruit_names.length; i++) {
       if (fruit_names[i] == choice_name) {
         fruit_found = true;
 
-        let quantity = Number(prompt("How many woukd you like to buy?"));
+        let quantity = Number(prompt("How many would you like to buy?"));
         if (quantity >= 0) {
           console.log("Total Price: PHP " + fruit_prices[i] * quantity);
         } else if (quantity < 0) {
