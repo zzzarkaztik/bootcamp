@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function solveTriangle(b, h) {
+        let area = (1 / 2) * b * h;
+        area = area.toFixed(2);
+        return area;
+      }
+
+      function solveCircle(r) {
+        let area = Math.PI * r ** 2;
+        area = area.toFixed(2);
+
+        return area;
+      }
+
+      function solveRectangle(l, w) {
+        let area = l * w;
+        area = area.toFixed(2);
+        return area;
+      }
+
+      function run() {
+        let choice = Number(
+          prompt(
+            "What shape would you like to solve for? (1) for Triangle, (2) for Circle, (3) for Rectangle"
+          )
+        );
+
+        switch (choice) {
+          case 1:
+            let b = Number(prompt("What is the base(b) of the triangle?"));
+            let h = Number(prompt("What is the height(h) of the triangle?"));
+
+            solveTriangle(b, h);
+            console.log("The area of the triangle is " + solveTriangle(b, h));
+            break;
+          case 2:
+            let r = Number(prompt("What is the radius(r) of the circle?"));
+
+            solveCircle(r);
+            console.log("The area of the circle is " + solveCircle(r));
+
+            break;
+          case 3:
+            let l = Number(prompt("What is the length(l) of the rectangle?"));
+            let w = Number(prompt("What is the width(w) of the rectangle?"));
+
+            solveRectangle();
+            console.log("The area of the rectangle is " + solveRectangle(l, w));
+
+            break;
+
+          default:
+            console.error("INVALID INPUT");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Testing</h1>
+    <button type="button" onclick="run()">RUN</button>
+  </body>
+</html>

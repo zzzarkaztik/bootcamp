@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle System</title>
+    <style>
+      .icon {
+        width: 100px;
+        transition: 100ms;
+      }
+      .enemy {
+        width: 50%;
+      }
+      .icon:hover {
+        transform: scale(1.05);
+        filter: brightness(100%);
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let w_max_hp = 100;
+      let e_max_hp = 300;
+      let w_hp = w_max_hp;
+      let e_hp = e_max_hp;
+      let attack_dmg = 30;
+      let fireball_dmg = 40;
+      let e_move;
+      let e_light_dmg = 15;
+      let e_heavy_dmg = 30;
+      let e_heal = 30;
+
+      function rng_enemy_action() {
+        let rng = Math.random();
+
+        if (rng <= 0.25) {
+          e_move = "light";
+        } else if (rng <= 0.5) {
+          e_move = "heavy";
+        } else if (rng <= 0.75) {
+          e_move = "block";
+        } else {
+          e_move = "magic block";
+        }
+      }
+
+      function enemy_move() {
+        switch (e_move) {
+          case "light":
+            console.log("The Skeleton King attacks you.");
+            w_hp -= e_light_dmg;
+            break;
+
+          case "heavy":
+            console.log("The Skeleton King swings his mace with full force!");
+            w_hp -= e_heavy_dmg;
+            break;
+
+          case "block":
+            console.log("The Skeleton King braces for impact.");
+            break;
+
+          case "magic block":
+            console.log("The Skeleton King uses magic absorption");
+            break;
+        }
+      }
+
+      function attack() {
+        rng_enemy_action();
+        e_hp -= attack_dmg;
+        console.log("You swung your sword at the Skeleton King!");
+        enemy_move();
+        if (e_move == "block") {
+          console.log("The Skeleton King succesfully blocks the attack.");
+          e_hp += attack_dmg;
+        }
+        do_turn();
+      }
+      function block() {
+        rng_enemy_action();
+        console.log("You raised your shield.");
+        enemy_move();
+        if (e_move == "light") {
+          console.log("Attack succesfully blocked");
+          w_hp += e_light_dmg;
+        } else {
+          console.log("Your shield did nothing.");
+        }
+        do_turn();
+      }
+      function counter() {
+        rng_enemy_action();
+        enemy_move();
+        console.log("You tried your luck by dodging.");
+        if (e_move == "heavy") {
+          console.log(
+            "You successfully dodge and countered! You critically dealt damage!"
+          );
+          e_hp -= attack_dmg * 2;
+        }
+
+        do_turn();
+      }
+      function fireball() {
+        console.log(
+          "You summon the element of fire and flings it to the enemy."
+        );
+        rng_enemy_action();
+        enemy_move();
+        if (e_move == "magic block") {
+          console.log(
+            "The Skeleton King drains your fireball and heals itself for 30 HP"
+          );
+          if (e_max_hp - e_hp > e_heal) {
+            e_hp += e_heal;
+          } else {
+            e_hp -= fireball_dmg;
+          }
+        } else if (e_move == "block") {
+          console.log("The enemy's shield strengthened the fireball!");
+          fireball_dmg = fireball_dmg * 2;
+        }
+        e_hp -= fireball_dmg;
+        do_turn();
+      }
+
+      function show_stats() {
+        console.log("Player HP: " + w_hp + "/" + w_max_hp);
+        console.log("Skeleton King's HP: " + e_hp + "/" + e_max_hp);
+        console.log("---------- END of TURN ----------");
+      }
+
+      function do_turn() {
+        if (e_hp <= 0) {
+          console.log("The Skeleton King has been felled. Congratulations!");
+        }
+        if (w_hp <= 0) {
+          console.log("You have been slain.");
+          console.log("---------- GAME OVER ----------.");
+        }
+
+        show_stats();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container text-center justify-content-center">
+      <h1>Fight the Skeleton King</h1>
+      <img
+        src="attack/skeleton.webp"
+        alt="picture of a skeleton king"
+        class="enemy"
+      />
+      <div>
+        <img
+          src="attack/attack.webp"
+          alt="attack icon"
+          onclick="attack()"
+          class="icon"
+        />
+        <img
+          src="attack/block.webp"
+          alt="block icon"
+          onclick="block()"
+          class="icon"
+        />
+        <img
+          src="attack/counter.webp"
+          alt="counter icon"
+          onclick="counter()"
+          class="icon"
+        />
+        <img
+          src="attack/fireball.webp"
+          alt="fireball icon"
+          onclick="fireball()"
+          class="icon"
+        />
+      </div>
+    </div>
+  </body>
+</html>
