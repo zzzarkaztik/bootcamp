@@ -4,6 +4,114 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#hideBasic").mouseup(function () {
+        $("#basic").slideToggle();
+      });
+      $("#hideStage1").click(function () {
+        $("#stage1").slideToggle();
+      });
+      $("#hideStage2").click(function () {
+        $("#stage2").slideToggle();
+      });
+      $("#hideMega").click(function () {
+        $("#mega").slideToggle();
+      });
+      $("#changeNickname").click(function () {
+        let nickname = prompt("What would you name your pokémon?");
+        if (newText === null || newText === "") {
+          return;
+        }
+        $("#torchic").text(nickname);
+      });
+    </script>
   </head>
-  <body></body>
+  <script src="home.js"></script>
+  <body>
+    <div class="container text-center">
+      <div>
+        <h1 id="heading_name">Arvs Villalobos</h1>
+        <div id="basic">
+          <img
+            src="https://projectpokemon.org/images/normal-sprite/torchic.gif"
+            alt="torchic sprite"
+          />
+          <h2 id="torchic">Torchic</h2>
+          <button class="btn btn-primary rounded-pill" id="changeNickname">
+            Change Nickname
+          </button>
+        </div>
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/treecko.gif"
+          alt="treecko sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/mudkip.gif"
+          alt="mudkip sprite"
+        />
+      </div>
+      <br />
+      <button id="hideBasic" class="btn btn-primary rounded-pill">Hide</button>
+      <div id="stage1">
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/combusken.gif"
+          alt="combusken sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/grovyle.gif"
+          alt="grovyle sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/marshtomp.gif"
+          alt="marshtomp sprite"
+        />
+      </div>
+      <br />
+      <button id="hideStage1" class="btn btn-primary rounded-pill">Hide</button>
+      <div id="stage2">
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/blaziken.gif"
+          alt="blaziken sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/sceptile.gif"
+          alt="sceptile sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/swampert.gif"
+          alt="swampert sprite"
+        />
+      </div>
+      <br />
+      <button id="hideStage2" class="btn btn-primary rounded-pill">Hide</button>
+      <div id="mega">
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/blaziken-mega.gif"
+          alt="mega blaziken sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/sceptile-mega.gif"
+          alt="mega sceptile sprite"
+        />
+        <img
+          src="https://projectpokemon.org/images/normal-sprite/swampert-mega.gif"
+          alt="mega swampert sprite"
+        />
+      </div>
+      <br />
+      <button id="hideMega" class="btn btn-primary rounded-pill">Hide</button>
+    </div>
+  </body>
 </html>
