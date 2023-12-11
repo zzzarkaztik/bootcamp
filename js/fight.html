@@ -107,7 +107,10 @@
           console.log(
             "You successfully dodge and countered! You critically dealt damage!"
           );
+          w_hp += e_heavy_dmg;
           e_hp -= attack_dmg * 2;
+        } else {
+          console.log("Dodging did nothing.");
         }
 
         do_turn();
@@ -122,16 +125,17 @@
           console.log(
             "The Skeleton King drains your fireball and heals itself for 30 HP"
           );
-          if (e_max_hp - e_hp > e_heal) {
+          if (e_hp + e_heal < e_max_hp) {
             e_hp += e_heal;
-          } else {
-            e_hp -= fireball_dmg;
+          } else if (e_hp + e_heal >= e_max_hp) {
+            e_hp = e_max_hp;
           }
         } else if (e_move == "block") {
           console.log("The enemy's shield strengthened the fireball!");
-          fireball_dmg = fireball_dmg * 2;
+          e_hp -= fireball_dmg * 2;
+        } else {
+          e_hp -= fireball_dmg;
         }
-        e_hp -= fireball_dmg;
         do_turn();
       }
 
@@ -142,14 +146,14 @@
       }
 
       function do_turn() {
-        if (e_hp <= 0) {
+        if (w_hp <= 0 && e_hp <= 0) {
+          console.log("---------- DOUBLE KO ----------");
+        } else if (e_hp <= 0) {
           console.log("The Skeleton King has been felled. Congratulations!");
-        }
-        if (w_hp <= 0) {
+        } else if (w_hp <= 0) {
           console.log("You have been slain.");
           console.log("---------- GAME OVER ----------.");
         }
-
         show_stats();
       }
     </script>

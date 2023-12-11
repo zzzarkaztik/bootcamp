@@ -8,7 +8,7 @@ function runActivity() {
     fruit_name = fruit_name.toLocaleLowerCase();
     let fruit_price = Number(prompt("What is the price of the fruit?"));
 
-    if (fruit_price >= 0) {
+    if (fruit_price > 0) {
       fruit_names.push(fruit_name);
       fruit_prices.push(fruit_price);
       fruit_stocks.push(0);
@@ -40,7 +40,7 @@ function runActivity() {
           )
         );
         if (addedStock > 0) {
-          fruit_stocks[i] = fruit_stocks[i] + addedStock;
+          fruit_stocks[i] += addedStock;
           console.log(
             addedStock +
               " stock(s) has been added to " +
@@ -104,7 +104,7 @@ function runActivity() {
           console.error("Not enough stock(s) of " + fruit_names[i]);
         } else if (quantity <= fruit_stocks[i] && quantity > 0) {
           let totalPrice = fruit_prices[i] * quantity;
-          fruit_stocks[i] = fruit_stocks[i] - quantity;
+          fruit_stocks[i] -= quantity;
           console.log(
             quantity +
               " " +
