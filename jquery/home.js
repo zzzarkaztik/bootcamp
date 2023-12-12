@@ -33,4 +33,18 @@ $(document).ready(function () {
       $("#pwMatch").hide();
     }
   });
+
+  $(".wl-item").click(function () {
+    $(this).toggleClass("subject-related");
+  });
+
+  $("img.painting").mouseenter(function () {
+    $(this).removeClass("painting-small");
+    $(this).addClass("painting-large");
+  });
+
+  $("img.painting").mouseleave(function () {
+    $(this).removeClass("painting-large");
+    $(this).addClass("painting-small");
+  });
 });

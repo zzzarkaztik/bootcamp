@@ -16,10 +16,22 @@
       crossorigin="anonymous"
     ></script>
     <script src="home.js"></script>
+    <style>
+      .painting {
+        transition: 300ms;
+      }
+      .painting-small {
+        width: 100px;
+      }
+
+      .painting-large {
+        width: 200px;
+      }
+    </style>
     <title>Document</title>
   </head>
   <body>
-    <div class="container border py-3 my-3">
+    <div class="container border py-3 my-3 rounded">
       <h1>Order History</h1>
       <table class="table">
         <tr>
@@ -37,11 +49,9 @@
           </tr>
         </tbody>
       </table>
-      <button id="addItem" class="btn btn-primary rounded-pill">
-        Add Items
-      </button>
+      <button id="addItem" class="btn btn-warning">Add Items</button>
     </div>
-    <div class="container my-3">
+    <div class="container my-3 py-3 border rounded">
       <h1>Shipping Information</h1>
       <form>
         <label for="address">Address: </label>
@@ -50,7 +60,7 @@
       </form>
     </div>
 
-    <div class="container my-3">
+    <div class="container my-3 py-3 border rounded">
       <form>
         <label for="form-pw">Password: </label>
         <input type="password" class="form-control" id="form-pw" />
@@ -59,6 +69,44 @@
         <span class="text-danger" id="pwNoMatch">Password does not match.</span>
         <span class="text-success" id="pwMatch">Password matched.</span>
       </form>
+    </div>
+
+    <div class="container my-3 py-3 border rounded">
+      <h1>Wishlist</h1>
+      <table class="table">
+        <tr>
+          <td class="wl-item">Omnitrix Underwear</td>
+        </tr>
+        <tr>
+          <td class="wl-item">Johnny Sins Standee</td>
+        </tr>
+        <tr>
+          <td class="wl-item">Winter in the Philippines</td>
+        </tr>
+        <tr>
+          <td class="wl-item">Real-life Blaziken</td>
+        </tr>
+        <tr>
+          <td class="wl-item">Super Flesh Light Pro-6000</td>
+        </tr>
+      </table>
+    </div>
+    <div class="container border rounded my-3 py-3">
+      <img
+        src="DEMO-IMAGES/las_meninas.webp"
+        class="painting painting-small"
+        alt="las_meninas"
+      />
+      <img
+        src="DEMO-IMAGES/persistence.jpg"
+        class="painting painting-small"
+        alt="persistence"
+      />
+      <img
+        src="DEMO-IMAGES/spoliarium.jpg"
+        class="painting painting-small"
+        alt="spoliarium"
+      />
     </div>
   </body>
 </html>
