@@ -19,13 +19,19 @@
     <style>
       .painting {
         transition: 300ms;
+        cursor: default;
       }
       .painting-small {
         width: 100px;
       }
 
       .painting-large {
-        width: 200px;
+        width: 300px;
+      }
+
+      .bag-preview {
+        width: 40px;
+        border: 1px solid black;
       }
     </style>
     <title>Document</title>
@@ -91,7 +97,8 @@
         </tr>
       </table>
     </div>
-    <div class="container border rounded my-3 py-3">
+    <div class="container border rounded my-3 py-3 text-center">
+      <h1>PAINTINGS FOR SALE</h1>
       <img
         src="DEMO-IMAGES/las_meninas.webp"
         class="painting painting-small"
@@ -107,6 +114,33 @@
         class="painting painting-small"
         alt="spoliarium"
       />
+      <p id="painting-caption"></p>
+    </div>
+    <div class="container border rounded my-3 py-3 text-center">
+      <h1>BAG FOR SALE</h1>
+      <img
+        src="DEMO-IMAGES/bag_front.png"
+        id="bag-display"
+        alt="front of the bag"
+        style="width: 500px"
+      />
+      <div>
+        <img
+          src="DEMO-IMAGES/bag_front.png"
+          class="bag-preview"
+          alt="front of the bag, small"
+        />
+        <img
+          src="DEMO-IMAGES/bag_side.png"
+          class="bag-preview"
+          alt="side of the bag, small"
+        />
+        <img
+          src="DEMO-IMAGES/bag_back.png"
+          class="bag-preview"
+          alt="back of the bag, small"
+        />
+      </div>
     </div>
   </body>
 </html>

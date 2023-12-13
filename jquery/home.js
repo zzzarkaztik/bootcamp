@@ -35,16 +35,24 @@ $(document).ready(function () {
   });
 
   $(".wl-item").click(function () {
-    $(this).toggleClass("subject-related");
+    $(this).toggleClass("bg-warning");
   });
 
   $("img.painting").mouseenter(function () {
     $(this).removeClass("painting-small");
     $(this).addClass("painting-large");
+    let desc = $(this).prop("alt");
+    $("#painting-caption").text(desc);
   });
 
   $("img.painting").mouseleave(function () {
     $(this).removeClass("painting-large");
     $(this).addClass("painting-small");
+    $("#painting-caption").text("");
+  });
+
+  $("img.bag-preview").click(function () {
+    let source = $(this).prop("src");
+    $("#bag-display").prop("src", source);
   });
 });
