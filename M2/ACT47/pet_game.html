@@ -10,7 +10,93 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/pet.js"></script>
+    <script>
+      let hunger = 100;
+      let exercise = 100;
+      let sleep = 100;
+
+      const minHunger = 0;
+      const minExercise = 0;
+      const minSleep = 0;
+
+      function do_eat() {
+        hunger = 100;
+        sleep -= 5;
+        if (hunger >= 100) {
+          hunger = 100;
+        }
+        let hunger_p = hunger + "%";
+        let sleep_p = sleep + "%";
+        $("#hunger_bar").css("width", hunger_p);
+        $("#sleep_bar").css("width", sleep_p);
+        $("#last_activity").text(`Fed Tawanchai!`);
+      }
+
+      function do_exercise() {
+        exercise = 100;
+        sleep -= 10;
+        if (exercise >= 100) {
+          exercise = 100;
+        }
+        let exercise_p = exercise + "%";
+        let sleep_p = sleep + "%";
+        $("#exercise_bar").css("width", exercise_p);
+        $("#sleep_bar").css("width", sleep_p);
+        $("#last_activity").text(`Played with Tawanchai!`);
+      }
+
+      function do_sleep() {
+        sleep = 100;
+        if (sleep >= 100) {
+          sleep = 100;
+        }
+        let sleep_p = sleep + "%";
+        $("#sleep_bar").css("width", sleep_p);
+        $("#last_activity").text(`Tawanchai took a nap.`);
+      }
+
+      $(document).ready(function () {
+        setInterval(degradeHunger, 500);
+        setInterval(degradeExercise, 1000);
+        setInterval(degradeSleep, 2000);
+        setInterval(updatePetColor, 100);
+
+        function degradeHunger() {
+          hunger--;
+          if (hunger < minHunger) {
+            hunger = minHunger;
+          }
+          let hunger_p = hunger + "%";
+          $("#hunger_bar").css("width", hunger_p);
+        }
+
+        function degradeExercise() {
+          exercise--;
+          if (exercise < minExercise) {
+            exercise = minExercise;
+          }
+          let exercise_p = exercise + "%";
+          $("#exercise_bar").css("width", exercise_p);
+        }
+
+        function degradeSleep() {
+          sleep--;
+          if (sleep < minSleep) {
+            sleep = minSleep;
+          }
+          let sleep_p = sleep + "%";
+          $("#sleep_bar").css("width", sleep_p);
+        }
+
+        function updatePetColor() {
+          if (hunger < 20 || sleep < 20 || exercise < 20) {
+            $("#pet").css("background-color", "red");
+          } else {
+            $("#pet").css("background-color", ""); // Reset to default color if conditions are not met
+          }
+        }
+      });
+    </script>
     <title>Simple Pet Game</title>
   </head>
   <body>
@@ -18,7 +104,11 @@
       <h1>Tawanchai, the Mega Blaziken!</h1>
       <div class="row d-flex justify-content-start align-items-center">
         <div class="col-lg-3">
-          <img src="img/mega-blaziken.gif" id="pet" class="img-fluid" />
+          <img
+            src="https://projectpokemon.org/images/normal-sprite/blaziken-mega.gif"
+            id="pet"
+            class="img-fluid"
+          />
         </div>
         <div class="col-lg-6" id="game_bars">
           <p>Hunger</p>
@@ -50,19 +140,19 @@
           </div>
           <div class="col-lg-5 my-2 mx-1 d-flex justify-content-start">
             <img
-              src="img/eat.png"
+              src="https://cdn3.iconfinder.com/data/icons/world-cuisine-astute-vol-1/512/Burger_Cheeseburger-1024.png"
               width="40px"
               id="do_eat"
               onclick="do_eat()"
             />
             <img
-              src="img/exercise.png"
+              src="https://cdn4.iconfinder.com/data/icons/healthy-5/64/gym-exercise-healthy-dumbbell-1024.png"
               width="40px"
               id="do_exercise"
               onclick="do_exercise()"
             />
             <img
-              src="img/sleep.png"
+              src="https://cdn4.iconfinder.com/data/icons/emoji-18/61/24-1024.png"
               width="40px"
               id="do_sleep"
               onclick="do_sleep()"

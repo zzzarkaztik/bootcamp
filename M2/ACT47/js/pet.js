@@ -39,13 +39,14 @@ function do_sleep() {
   }
   let sleep_p = sleep + "%";
   $("#sleep_bar").css("width", sleep_p);
-  $("#last_activity").text(`Tawanchai took a nap`);
+  $("#last_activity").text(`Tawanchai took a nap.`);
 }
 
 $(document).ready(function () {
   setInterval(degradeHunger, 500);
   setInterval(degradeExercise, 1000);
   setInterval(degradeSleep, 2000);
+  setInterval(updatePetColor, 100);
 
   function degradeHunger() {
     hunger--;
@@ -72,5 +73,13 @@ $(document).ready(function () {
     }
     let sleep_p = sleep + "%";
     $("#sleep_bar").css("width", sleep_p);
+  }
+
+  function updatePetColor() {
+    if (hunger < 20 || sleep < 20 || exercise < 20) {
+      $("#pet").css("background-color", "red");
+    } else {
+      $("#pet").css("background-color", ""); // Reset to default color if conditions are not met
+    }
   }
 });
