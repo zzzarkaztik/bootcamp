@@ -1,0 +1,81 @@
+const pets = [
+  {
+    id: 0,
+    species: "alien",
+    eating_habit: "carnivore",
+    pet_name: "Xenomorph",
+    image: "pets/Xenomorph.jpg",
+  },
+  {
+    id: 1,
+    species: "dog",
+    eating_habit: "omnivore",
+    pet_name: "Brownie",
+    image: "pets/Brownie.jpg",
+  },
+  {
+    id: 2,
+    species: "cat",
+    eating_habit: "carnivore",
+    pet_name: "Oreo",
+    image: "pets/Oreo.jpg",
+  },
+  {
+    id: 3,
+    species: "rabbit",
+    eating_habit: "herbivore",
+    pet_name: "Snowball",
+    image: "pets/Snowball.jpg",
+  },
+  {
+    id: 4,
+    species: "parrot",
+    eating_habit: "omnivore",
+    pet_name: "Sunny",
+    image: "pets/Sunny.jpg",
+  },
+  {
+    id: 5,
+    species: "dog",
+    eating_habit: "omnivore",
+    pet_name: "Max",
+    image: "pets/Max.jpg",
+  },
+  {
+    id: 6,
+    species: "cat",
+    eating_habit: "carnivore",
+    pet_name: "Whiskers",
+    image: "pets/Whiskers.jpg",
+  },
+  {
+    id: 7,
+    species: "rabbit",
+    eating_habit: "herbivore",
+    pet_name: "Cottontail",
+    image: "pets/Cottontail.jpg",
+  },
+  {
+    id: 8,
+    species: "parrot",
+    eating_habit: "omnivore",
+    pet_name: "Polly",
+    image: "pets/Polly.jpg",
+  },
+  {
+    id: 9,
+    species: "dog",
+    eating_habit: "omnivore",
+    pet_name: "Rocky",
+    image: "pets/Rocky.jpg",
+  },
+  {
+    id: 10,
+    species: "cat",
+    eating_habit: "carnivore",
+    pet_name: "Mittens",
+    image: "pets/Mittens.jpg",
+  },
+];
+
+module.exports = { pets };
