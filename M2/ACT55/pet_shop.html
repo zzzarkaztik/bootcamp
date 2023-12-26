@@ -15,12 +15,27 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="pet_cards.js"></script>
+    <script src="pet_listings.js"></script>
     <title>Pet Shop</title>
   </head>
   <body>
     <h1 class="display-1 text-center">Arvs' Pet Shop</h1>
     <div class="container">
+      <h2>Adopt a Pet!</h2>
+      <form class="row">
+        <div class="col-lg-10">
+          <select class="form-select" name="dropdown" id="pet_list">
+            <option disabled selected>Select one</option>
+          </select>
+        </div>
+        <div class="col-lg-2">
+          <input
+            type="submit"
+            class="btn btn-success w-100 px-0"
+            value="Adopt"
+          />
+        </div>
+      </form>
       <div class="row" id="pet-cards"></div>
     </div>
   </body>

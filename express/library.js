@@ -57,8 +57,10 @@ app.put("/api/books", (req, res) => {
   let new_book = {
     id: b.length,
     title: req.body.title,
+    description: req.body.description,
     genre: req.body.genre,
   };
+  console.log(new_book);
   b.push(new_book);
   res.send(new_book);
 });

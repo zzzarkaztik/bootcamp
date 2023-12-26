@@ -16,11 +16,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/genre_table.js"></script>
-    <script src="js/navbar.js"></script>
+    <script src="js/genre_dropdown.js"></script>
     <title>Library</title>
   </head>
   <body class="pt-5">
-    <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="library.html">THE LIBRARY</a>
         <button
@@ -40,10 +40,43 @@
               <a class="nav-link active" href="library.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link genre" href="genre.html">Fantasy</a>
+              <a class="nav-link" href="book-viewer.html">Book Viewer</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link genre" href="genre.html">Sci-fi</a>
+              <a class="nav-link" href="book-add.html">Add a Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="book-rent.html">Rent a Book</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Genre
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item genre" href="genre.html">Fantasy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item genre" href="genre.html">Sci-fi</a>
+                </li>
+                <li>
+                  <a class="dropdown-item genre" href="genre.html">Romance</a>
+                </li>
+                <li>
+                  <a class="dropdown-item genre" href="genre.html">Cyberpunk</a>
+                </li>
+                <li>
+                  <a class="dropdown-item genre" href="genre.html">Religious</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

@@ -44,10 +44,13 @@ app.get("/api/pets/list/species", (req, res) => {
 app.put("/api/pets", (req, res) => {
   let new_pet = {
     id: p.length,
-    species: "dragon",
-    eating_habit: "carnivore",
-    pet_name: "Drogon",
+    species: req.body.species,
+    eating_habit: req / body.species,
+    pet_name: req.body.pet_name,
+    image: "unknown",
   };
+
+  console.log(new_pet);
   p.push(new_pet);
   res.send(new_pet);
 });
