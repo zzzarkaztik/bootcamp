@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use DB;
+
+use App\Models\Student;
+use Illuminate\Http\Request;
+
+class StudentController extends Controller
+{
+    public function index()
+    {
+        // $total_student = DB::select("SELECT COUNT(*) AS total FROM students");
+        // $students = DB::select("SELECT first_name, last_name, year_level, province FROM students WHERE province LIKE '%Zamboanga%' ORDER BY province, last_name LIMIT 20");
+
+        $students = Student::query()
+            ->select('first_name', 'last_name', 'year_level', 'province')
+            ->orderBy('last_name', 'DESC') 
+            ->orderBy('first_name')
+            ->limit(20)
+            ->get();
+
+        $total_student = Student::query()
+            ->select(DB::raw('COUNT(*) AS total'))
+            ->get()
+            ->first();
+
+        $students_male = Student::query()
+            ->select('first_name', 'last_name', 'gender', 'province')
+            ->where('gender', '=', 'male')
+            ->orderBy('last_name')
+            ->orderBy('first_name')
+            ->limit(20)
+            ->get();
+            
+        return view('student', compact('total_student', 'students', 'students_male'));
+    }
+}

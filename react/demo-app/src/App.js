@@ -3,6 +3,11 @@ import "jquery/dist/jquery.js";
 import About from "./Components/About";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Grades from "./Components/Grades";
+import Triangle from "./Components/Triangle";
+import Election from "./Components/Election";
+import Shop from "./Components/Shop";
+import Counter from "./Components/Counter";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -20,7 +25,7 @@ function App() {
             <Footer />
           </>
         }
-      ></Route>
+      />
 
       <Route
         path="/about"
@@ -31,7 +36,55 @@ function App() {
             <Footer />
           </>
         }
-      ></Route>
+      />
+      <Route
+        path="/grades"
+        element={
+          <>
+            <Navbar />
+            <Grades score={60} total={100} />
+            <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/shop"
+        element={
+          <>
+            <Navbar />
+            <Shop />
+            <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/counter"
+        element={
+          <>
+            <Navbar />
+            <Counter />
+            <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/triangle"
+        element={
+          <>
+            <Navbar />
+            <Triangle />
+            <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/election"
+        element={
+          <>
+            <Election />
+          </>
+        }
+      />
     </Routes>
   );
 }
